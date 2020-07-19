@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BikerMap</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <script src="https://kit.fontawesome.com/b6e6800832.js" crossorigin="anonymous"></script>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <% if flash[:notice] %>
+      <div class="notification is-info">
+        <p class="notice"><%= notice %></p>
+      </div>
+    <% end %>
+
+    <% if flash[:alert] %>
+      <div class="notification is-danger">
+        <p class="alert"><%= alert %></p>
+      </div>
+    <% end %>
+
+    <nav class="navbar is-warning has-background-black">
+      <div class="navbar-brand">
+        <%= link_to root_path, class: "navbar-item has-background-black" do %>
+          <h1 class="title is-center has-text-white" style="font-family: impact;">BikerMap</h1>
+        <% end %>
+        <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+      <% if user_signed_in? %>
+        <div id="navbarExampleTransparentExample" class="navbar-menu">
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <%= link_to "STORES", stores_path, class: "navbar-item button is-warning  is-light has-text-white has-background-black has-text-weight-bold"%>
+            </div>
+            <div class="navbar-item">
+              <%= link_to "NEWPOST", new_store_path, class: "navbar-item button is-warning is-light has-text-white has-background-black has-text-weight-bold" %>
+            </div>
+            <div class="navbar-end">
+              <div class="navbar-item">
+                <div class="field is-grouped">
+                  <p class="control">
+                    <%= link_to "USERS", users_path, class: "button is warning is-light has-text-white has-background-black has-text-weight-bold" %>
+                  </p>
+                  <p class="control">
+                    <%= link_to "MYPAGE", user_path(current_user), class: "button is warning is-light has-text-white has-background-black has-text-weight-bold"%>
+                  </p>
+                  <p class="control">
+                    <%= link_to "LOGOUT", destroy_user_session_path, method: :delete, class: "button is-warning is-light has-text-white has-background-black has-text-weight-bold" %>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% else %>
+        <div id="navbarExampleTransparentExample" class="navbar-menu">
+          <div class="navbar-end">
+            <div class="navbar-item">
+             <%= link_to "STORES", stores_path, class: "navbar-item button is-warning is-light has-text-white has-background-black has-text-weight-bold" %>
+            </div>
+          <div class="navbar-item">
+            <%= link_to "USERS", users_path, class: "navbar-item button is warning is-light has-text-white has-background-black has-text-weight-bold" %>
+          </div>
+            <div class="navbar-item">
+              <div class="field is-grouped">
+                <p class="control">
+                  <%= link_to "LOGIN",new_user_session_path, class: "button is warning is-light has-text-white has-background-black has-text-weight-bold" %>
+                 </p>
+                  <p class="control">
+                    <%= link_to "SIGNUP",new_user_registration_path, class: "button is warning is-light has-text-white has-background-black has-text-weight-bold" %>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+
+    </nav>
+    <%= yield %>
+  </body>
+</html>

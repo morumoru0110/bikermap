@@ -1,0 +1,37 @@
+<% if@store.errors.any? %>
+  <div class="notification is-danger">
+    <h2><%= pluralize(@store.errors.count, "error") %> prohibited this object from being saved: not successfully</h2>
+    <ul>
+      <% @store.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul> 
+  </div>
+<% end %>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-6">
+        <%= form_for @store do |f| %>
+          <div class="field">
+            <%= f.label :title, "STORE'S NAME", class: "label has-text-white" %>
+            <%= f.text_field :title, class:"input has-text-white has-background-black" %>
+          </div>
+
+          <div class="field">
+            <%= f.label :body, "DETAILS", class: "label has-text-white" %>
+            <%= f.text_area :body, class: "textarea has-text-white has-background-black" %>
+          </div>
+
+          <div class="field">
+            <%= f.label :image, "PHOTO", class: "label has-text-white" %>
+            <%= f.attachment_field :image, class: "input has-text-white has-background-black" %>
+          </div>
+
+          <%= f.submit '投稿', class: "button is-black has-text-white is-capitalized has-text-weight-bold" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>

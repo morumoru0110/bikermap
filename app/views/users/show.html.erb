@@ -1,0 +1,84 @@
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="columns is-centered">
+          <div class="column is-6">
+            <figure class="image is-135x135"  style="margin-left: auto; margin-right: auto;">
+              <%= attachment_image_tag @user, :profile_image, fallback: "no-image.png", class: "profile_image is-outlined" %>
+            </figure>
+          </div>
+          <div class="column is-8 ">
+            <table class="table is-fullwidth has-text-white has-background-black">
+              <tr>
+                <td class="is-size-4">
+                  <strong class="name has-text-white"><%= @user.username %></strong>
+                </td>
+                <% if @user.id == current_user.id %>
+                <td class="is-size-4">
+                  <%= @user.email %>
+                </td>
+                <td>
+                    <%= link_to "Edit", edit_user_path(@user), class: "button is-black" %>
+                </td>
+                <% end %>
+              </tr>
+            </table>
+            <table class="table is-fullwidth has-text-white has-background-black">
+              <tr>
+                <td>
+                  <%= @user.profile %>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="columns is-multiline">
+      <% @user.stores.each do |store| %>
+        <div class="column is-4">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <%= attachment_image_tag store, :image %>
+              </figure>
+            </div>
+            <div class="card-content has-background-black">
+              <div class="media">
+                <div class="media-content has-background-black">
+                  <%= link_to store_path(store), class: "panel-block has-text-white" do %>
+                    <span class="panel-icon has-text-white">
+                      <i class="fas fa-motorcycle" aria-hidden="true"></i>
+                    </span>
+                    CHECK
+                  <% end %>
+                  <% if @user.id == current_user.id %>
+                    <%= link_to edit_store_path(store), class: "panel-block has-text-white" do %>
+                      <span class="panel-icon has-text-white">
+                        <i class="fas fa-motorcycle"></i>
+                      </span>
+                      EDIT
+                    <% end %>
+                    <%= link_to store_path(store), method: :delete, data: {confirm: "ARE YOU SURE?"}, class: "panel-block has-text-white" do %>
+                    <span class="panel-icon has-text-white">
+                      <i class="fas fa-motorcycle"></i>
+                    </span>
+                    DELETE
+                    <% end %>
+                  <% end %>
+                </div>
+              </div>
+              <div class="content has-text-white">
+                <time><%= store.updated_at.strftime("%Y-%m-%d %H:%M") %></time> UPDATE
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
