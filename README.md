@@ -57,3 +57,5 @@ devise
 refile
 refile-mini_magick
 bulma-rails
+
+# DB設計
