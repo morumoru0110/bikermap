@@ -1,34 +1,6 @@
 # BikerMaps
 
-# DB 設計
-
-## users テーブル
-
-| Column   | Type    | Options     |
-| -------- | ------- | ----------- |
-| title    | string  | null: false |
-| body     | text    | null: false |
-| image_id | string  | null: false |
-| user_id  | integer | null: false |
-
-### Association
-
-- has_many :stores
-
-## stores テーブル
-
-| Column           | Type    | Options     |
-| ---------------- | ------- | ----------- |
-| email            | string  | null: false |
-| username         | string  | null: false |
-| profile          | text    |
-| profile_image_id | string  | null: false |
-| user_id          | integer | null: false |
-
-### Association
-
-- belongs to :user
-  プログラミングスクール TECH::CAMP の個人開発アプリで、「都内のバイク乗りが通う飲食店を共有しあえるアプリ」を作成しました。<br>
+プログラミングスクール TECH::CAMP の個人開発アプリで、「都内のバイク乗りが通う飲食店を共有しあえるアプリ」を作成しました。<br>
 
 # 作成理由
 
@@ -91,3 +63,30 @@ refile-mini_magick<br>
 bulma-rails<br>
 
 # DB 設計
+
+## users テーブル
+
+| Column   | Type    | Options     |
+| -------- | ------- | ----------- |
+| title    | string  | null: false |
+| body     | text    | null: false |
+| image_id | string  | null: false |
+| user_id  | integer | null: false |
+
+### Association
+
+- has_many :stores
+
+## stores テーブル
+
+| Column           | Type    | Options     |
+| ---------------- | ------- | ----------- |
+| email            | string  | null: false |
+| username         | string  | null: false |
+| profile          | text    |
+| profile_image_id | string  | null: false |
+| user_id          | integer | null: false |
+
+### Association
+
+- belongs to :user
