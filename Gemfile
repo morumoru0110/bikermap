@@ -63,4 +63,5 @@ gem "refile-s3"
 
 group :production do
   gem 'unicorn', '5.4.1'
+  gem 'mysql2'
 end
