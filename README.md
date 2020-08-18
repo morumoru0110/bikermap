@@ -1,6 +1,6 @@
 # アプリ紹介
 
-アプリ名 : BikeMaps<br>
+アプリ名 : BikeMap<br>
 　リンク : http://54.199.15.51/<br>
 テストID : test@test<br>
 パスワード: 123456<br>
