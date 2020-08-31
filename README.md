@@ -5,6 +5,12 @@
 テストID : test@test<br>
 パスワード: 123456<br>
 
+# 開発概要
+言語 : Ruby, Ruby on Rails, HTML/CSS<br>
+デプロイ: AWS EC2<br>
+Webサーバー : Nginx<br>
+バージョン管理 : Github<br>
+
 プログラミングスクール「TECH CAMP」の個人開発アプリ作成期間で、「都内のバイク乗りが通う飲食店を共有しあえるアプリ」を作成しました。<br>
 
 # 作成理由
@@ -64,15 +70,6 @@ devise<br>
 refile<br>
 refile-mini_magick<br>
 bulma-rails<br>
-
-# 開発言語/概要
-
-Ruby
-Ruby on Rails
-HTML/CSS
-AWS
-VScode
-Github
 
 # DB 設計
 
