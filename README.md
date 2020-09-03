@@ -7,6 +7,7 @@
 
 # 開発概要
 ## 開発環境
+*
 言語 : Ruby, Ruby on Rails, HTML/CSS<br>
 デプロイ: AWS EC2<br>
 Webサーバー : Nginx<br>
