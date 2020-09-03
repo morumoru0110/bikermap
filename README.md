@@ -1,6 +1,8 @@
 # アプリ紹介
 
-* 「都内のバイク乗りが通う飲食店を共有しあえるアプリ」を作成しました。<br>
+「都内のバイク乗りが通う飲食店を共有しあえるアプリ」を作成しました。<br>
+
+[![Image from Gyazo](https://i.gyazo.com/44136c39c1510cd5b21078e793c6bd0c.gif)](https://gyazo.com/44136c39c1510cd5b21078e793c6bd0c)
 
 アプリ名 : BikeMap<br>
 　リンク : http://54.199.15.51/<br>
